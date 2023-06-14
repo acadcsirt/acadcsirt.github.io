@@ -58,9 +58,6 @@ function svgqrjsonclick(){
   }
 }
 
-function main() {
-  deleteCookie(tokencookiename);
-  qrController(wauthparam);
-}
 
-main();
+deleteCookie(tokencookiename);
+qrController(wauthparam);
