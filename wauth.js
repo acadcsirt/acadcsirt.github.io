@@ -11,6 +11,11 @@ var refreshbutton=`
 </g></svg>
 `;
 
+
+let urlgetparams = new Proxy(new URLSearchParams(window.location.search), {
+  get: (searchParams, prop) => searchParams.get(prop),
+});
+console.log(urlgetparams);
 let wauthparam = {
   id_user : "user_name",
   id_pass : "user_pass",
@@ -28,7 +33,8 @@ let wauthparam = {
   rto : 0,
   countdown : 0,
   wsocket:0,
-  refreshbutton
+  refreshbutton,
+  urlgetparams
 }
 
 /*whatsauth/svgqrjs */
@@ -45,9 +51,7 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
     mobile = false;
   }
 
-const urlgetparams = new Proxy(new URLSearchParams(window.location.search), {
-  get: (searchParams, prop) => searchParams.get(prop),
-});
+
 
 function svgqrjsonclick(){
   if (mobile){
