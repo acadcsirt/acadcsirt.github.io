@@ -11,7 +11,7 @@ var refreshbutton=`
 </g></svg>
 `;
 
-wauthparam = {
+let wauthparam = {
   id_user : "user_name",
   id_pass : "user_pass",
   id_form : "loginform",
