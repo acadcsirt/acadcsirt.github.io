@@ -12,7 +12,8 @@ var refreshbutton=`
 `;
 
 
-let urlgetparams = new Proxy(new URLSearchParams(window.location.search), {
+let urlgetparams = {uuid: null}
+urlgetparams = new Proxy(new URLSearchParams(window.location.search), {
   get: (searchParams, prop) => searchParams.get(prop),
 });
 console.log(urlgetparams);
@@ -34,7 +35,7 @@ let wauthparam = {
   countdown : 0,
   wsocket:0,
   refreshbutton,
-  urlgetparams
+  uuid : urlgetparams.uuid
 }
 
 /*whatsauth/svgqrjs */
